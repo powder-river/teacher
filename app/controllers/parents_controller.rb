@@ -75,13 +75,10 @@ class ParentsController < ApplicationController
 
 
     def logged_in?
-      if request?.post
-        educator = Educator.find_by_email?(params[:email])
-        if educator && educator.password_digest
-
-        end
-
-      end
+      if Educator.find_by_id(session[:educator_id])
+			else
+				redirect_to sessions_login_path, notice: 'Message Here, no dice'
+			end
 
     end
 end
