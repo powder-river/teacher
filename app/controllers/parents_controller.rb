@@ -6,6 +6,7 @@ class ParentsController < ApplicationController
   # GET /parents.json
   def index
     @parents = Parent.all
+    @list_by_educator = Parent.where(educator_id: session[:educator_id])
   end
 
   # GET /parents/1
@@ -70,13 +71,13 @@ class ParentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def parent_params
-      params.require(:parent).permit(:student_name, :parent_name, :parent_email)
+      params.require(:parent).permit(:student_name, :parent_name, :parent_email, :educator_id)
     end
 
 
     def logged_in?
       if Educator.find_by_id(session[:educator_id])
-        
+
 			else
 				redirect_to sessions_login_path, notice: 'Message Here, no dice'
 			end

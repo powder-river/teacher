@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'educators/edit_email'
+
+  get 'educators/edit_password'
+
+  get 'edit_email/edit_password'
+
   root 'parents#index'
   get 'sessions/login'
   post 'sessions/login'

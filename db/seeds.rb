@@ -8,3 +8,6 @@
 
 Educator.create!(name: "Seth Ward", email: "sward@uwyo.edu", password: "password")
 Educator.create!(name: "Danai Adkisson", email: "dadkisso@uwyo.edu", password: "danai")
+
+Parent.create!(student_name: "ddd", parent_name:"fff", parent_email:"sss", educator_id:1)
+Parent.create!(student_name: "lll", parent_name:"ggg", parent_email:"aaa", educator_id:2)
