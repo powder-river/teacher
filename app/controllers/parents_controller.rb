@@ -76,6 +76,7 @@ class ParentsController < ApplicationController
 
     def logged_in?
       if Educator.find_by_id(session[:educator_id])
+        
 			else
 				redirect_to sessions_login_path, notice: 'Message Here, no dice'
 			end

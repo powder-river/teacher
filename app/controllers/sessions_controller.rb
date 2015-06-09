@@ -1,9 +1,9 @@
 class SessionsController < ApplicationController
   def login
   	if request.post?
-  	  user = User.find_by_email(params[:email])
-  	  if user && user.password == params[:password]
-  		  session[:user_id] = user.id
+  	  educator = Educator.find_by_email(params[:email])
+  	  if educator && educator.authenticate(params[:password])
+  		  session[:educator_id] = educator.id
   		  redirect_to parents_path, notice: 'You have logged in!'
   	  else
   		flash[:notice] = 'Login Failed'
@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
   end
 
   def logout
-    
+    session[:user_id]
+    redirect_to sessions_login_path, notice: "You have logged out!"
   end
 end

@@ -23,6 +23,10 @@
     <%= f.label :parent_email %><br>
     <%= f.text_field :parent_email %>
   </div>
+
+  <div class="field">
+    <%= f.hidden_field :educator_id, :value => params[:educator_id] %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
