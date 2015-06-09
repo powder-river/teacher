@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
     end
   end
 
+
   def logout
     session[:user_id]
     redirect_to sessions_login_path, notice: "You have logged out!"

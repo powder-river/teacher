@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
-  get 'educators/edit_email'
-
-  get 'educators/edit_password'
-
-  get 'edit_email/edit_password'
-
+  get 'educators/:id/edit' => 'educators#edit'
+  # patch 'educators/:id/edit'=> 'educators#edit'
+  #
+  # get 'educator/' => 'educators#edit'
+  # # get 'api/v1/game_reviews/:game' => 'game_reviews#show'
+  #
   root 'parents#index'
   get 'sessions/login'
   post 'sessions/login'
-
+  #
   get 'sessions/logout'
 
 
+  resources :educators
   resources :parents
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
