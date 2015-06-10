@@ -1,0 +1,19 @@
+
+ @import "bourbon";
+ @import "base/base";
+ @import "neat";
+
+
+body{
+  font-family: $verdana;
+  @include outer-container(90%);
+
+}
+
+.educator_options{
+  
+}
+
+.the_head{
+  float: right;
+}
